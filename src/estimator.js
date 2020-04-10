@@ -1,5 +1,5 @@
 
-const covid19ImpactEstimator = (data) => {
+export const covid19ImpactEstimator = (data) => {
   const { reportedCases } = data;
   const impact = {};
   const severeImpact = {};
@@ -10,14 +10,14 @@ const covid19ImpactEstimator = (data) => {
   switch (data.periodType) {
     case 'months':
       impact.infectionsByRequestedTime = impact.currentlyInfected * (
-        2 ** Math.floor(((data.timeToElapse * 30) / 3))
+        2 ** Math.trunc(((data.timeToElapse * 30) / 3))
       );
       impact.dollarsInFlight = Math.trunc((impact.infectionsByRequestedTime * data
         .region.avgDailyIncomePopulation) * (data
         .region.avgDailyIncomeInUSD / (data.timeToElapse * 30)));
 
       severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected * (
-        2 ** Math.floor(((data.timeToElapse * 30) / 3))
+        2 ** Math.trunc(((data.timeToElapse * 30) / 3))
       );
       severeImpact.dollarsInFlight = Math.trunc((severeImpact.infectionsByRequestedTime * data
         .region.avgDailyIncomePopulation) * (data
@@ -26,14 +26,14 @@ const covid19ImpactEstimator = (data) => {
 
     case 'weeks':
       impact.infectionsByRequestedTime = impact.currentlyInfected * (
-        2 ** (Math.floor((data.timeToElapse * 7) / 3))
+        2 ** (Math.trunc((data.timeToElapse * 7) / 3))
       );
       impact.dollarsInFlight = Math.trunc((impact.infectionsByRequestedTime * data.region
         .avgDailyIncomePopulation) * (data
         .region.avgDailyIncomeInUSD / (data.timeToElapse * 7)));
 
       severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected * (
-        2 ** (Math.floor((data.timeToElapse * 7) / 3))
+        2 ** (Math.trunc((data.timeToElapse * 7) / 3))
       );
       severeImpact.dollarsInFlight = Math.trunc((severeImpact.infectionsByRequestedTime * data
         .region.avgDailyIncomePopulation) * (data
@@ -42,14 +42,14 @@ const covid19ImpactEstimator = (data) => {
 
     case 'days':
       impact.infectionsByRequestedTime = impact.currentlyInfected * (
-        2 ** (Math.floor((data.timeToElapse * 1) / 3))
+        2 ** (Math.trunc((data.timeToElapse * 1) / 3))
       );
       impact.dollarsInFlight = Math.trunc((impact.infectionsByRequestedTime * data
         .region.avgDailyIncomePopulation) * (data
         .region.avgDailyIncomeInUSD / (data.timeToElapse * 1)));
 
       severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected * (
-        2 ** (Math.floor((data.timeToElapse * 1) / 3))
+        2 ** (Math.trunc((data.timeToElapse * 1) / 3))
       );
       severeImpact.dollarsInFlight = Math.trunc((severeImpact.infectionsByRequestedTime * data
         .region.avgDailyIncomePopulation) * (data

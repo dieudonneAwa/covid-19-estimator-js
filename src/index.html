@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Covid19 estimator" />
+  <title>Covid19 Estimator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main">
+    <h1>Covid19 Estimator</h1>
+    <div class="form-container">
+      <form role="form">
+        <div class="form-group">
+          <label for="regionName">Region name</label>
+          <input type="text" name="regionName" id="regionName" data-regionName="" required>
+        </div>
+
+        <div class="form-group">
+          <label for="avgAge">Average age</label>
+          <input type="number" name="avgAge" id="avgAge" data-population="" required>
+        </div>
+
+        <div class="form-group">
+          <label for="avgDailyIncomeInUSD">Average daily income in USD</label>
+          <input type="number" name="avgDailyIncomeInUSD" id="avgDailyIncomeInUSD" data-population="" required>
+        </div>
+
+        <div class="form-group">
+          <label for="avgDailyIncomePopulation">Average daily income population</label>
+          <input type="number" name="avgDailyIncomePopulation" id="avgDailyIncomePopulation" step="any" data-population="" required>
+        </div>
+        
+        <div class="form-group population">
+          <label for="population">Population</label>
+          <input type="number" name="population" id="population" data-population="" required>
+        </div>
+
+        <div class="form-group timeToElapse">
+          <label for="timeToElapse">Time to elapse</label>
+          <input type="number" name="timeToElapse" id="timeToElapse" data-time-to-elapse="" required>
+        </div>
+
+        <div class="form-group reportedCases">
+          <label for="reportedCases">Reported cases</label>
+          <input type="number" name="reportedCases" id="reportedCases" data-reported-cases="" required>
+        </div>
+
+        <div class="form-group totalHospitalBeds">
+          <label for="totalHospitalBeds">Total hospital beds</label>
+          <input type="number" name="totalHospitalBeds" id="totalHospitalBeds" data-total-hospital-beds="" required>
+        </div>
+
+        <div class="form-group periodType">
+          <select name="periodType" id="periodType" data-period-type="" required>
+            <option value="">Period type</option>
+            <option value="days">Days</option>
+            <option value="weeks">Weeks</option>
+            <option value="months">Months</option>
+          </select>
+        </div>
+
+        <button class="estimate" type="submit" role="button" data-go-estimate="">Estimate</button>
+      </form>
+    </div>
+
+    <div class="impact-container">
+      <h2>Impact Estimations</h2>
+      <table id="table1">
+        <tbody>
+          <tr>
+            <th>Currently infected</th>
+            <th>Infections by requested time</th>
+            <th>Dollars in flight</th>
+            <th>Severe cases by requested time</th>
+            <th>Hospital beds by requested time</th>
+            <th>Cases of ICU by requested time</th>
+            <th>Cases of ventilators by requested time</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="severeImpact-container">
+      <h2>Impact Estimations</h2>
+      <table id="table2">
+        <tbody>
+          <tr>
+            <th>Currently infected</th>
+            <th>Infections by requested time</th>
+            <th>Dollars in flight</th>
+            <th>Severe cases by requested time</th>
+            <th>Hospital beds by requested time</th>
+            <th>Cases of ICU by requested time</th>
+            <th>Cases of ventilators by requested time</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <script type="module" src="./estimator.js"></script>
+  <script type="module" src="./index.js"></script>
+</body>
+</html>

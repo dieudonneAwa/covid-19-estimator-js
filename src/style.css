@@ -40,8 +40,6 @@ body {
 }
 
 .main .form-container .form-group {
-  display: grid;
-  justify-content: start;
   width: 200px;
 }
 

@@ -8,10 +8,14 @@
   <title>Covid19 Estimator</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  
   <div class="main">
+    
     <h1>Covid19 Estimator</h1>
     <div class="form-container">
+
       <form id="form" role="form" aria-labelledby="form-container form">
         <div class="form-group">
           <label for="regionName">
@@ -130,12 +134,14 @@
 
         <button class="estimate" type="submit" role="button" data-go-estimate="estimate" aria-label="submit">Estimate</button>
       </form>
+
     </div>
 
     <div class="impact-container">
       <h2>Impact Estimations</h2>
       <table id="table1">
         <tbody>
+
           <tr>
             <th>Currently infected</th>
             <th>Infections by requested time</th>
@@ -145,6 +151,7 @@
             <th>Cases of ICU by requested time</th>
             <th>Cases of ventilators by requested time</th>
           </tr>
+          
         </tbody>
       </table>
     </div>
@@ -153,6 +160,7 @@
       <h2>Impact Estimations</h2>
       <table id="table2">
         <tbody>
+
           <tr>
             <th>Currently infected</th>
             <th>Infections by requested time</th>
@@ -162,12 +170,15 @@
             <th>Cases of ICU by requested time</th>
             <th>Cases of ventilators by requested time</th>
           </tr>
+
         </tbody>
       </table>
     </div>
+
   </div>
   
   <script type="module" src="./estimator.js"></script>
   <script type="module" src="./index.js"></script>
+
 </body>
 </html>

@@ -16,19 +16,14 @@ document.querySelector('form').addEventListener('keyup', (e) => {
   }
 
   try {
-    const observer = new PerformanceObserver((list) => {
-      for (const entry of list.getEntries()) {
-        const fid = entry.processingStart - entry.startTime;
-        console.log('FID:', fid);
-      }
-    });
+    const observer = new PerformanceObserver();
 
     observer.observe({
       type: 'first-input',
       buffered: true
     });
   } catch (err) {
-    // Do nothing if the browser doesn't support this API.
+    // Do nothing if the browser doesn't support this.
   }
 });
 
@@ -62,7 +57,6 @@ document.querySelector('form').addEventListener('submit', (e) => {
   });
 
   const tBody1 = document.querySelector('tBody');
-
   const row1 = tBody1.insertRow();
 
   const resultvalues = Object.values(result.impact);
@@ -76,7 +70,6 @@ document.querySelector('form').addEventListener('submit', (e) => {
 
 
   const tBody2 = document.querySelector('#table2 tbody');
-
   const row2 = tBody2.insertRow();
 
   const severeImpact = Object.values(result.severeImpact);

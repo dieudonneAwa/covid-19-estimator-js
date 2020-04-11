@@ -29,6 +29,8 @@ document.querySelector('form').addEventListener('keyup', (e) => {
 
 document.querySelector('form').addEventListener('submit', (e) => {
   e.preventDefault();
+  const impactContainer = document.querySelector('.impact-container');
+  const severeImpactContainer = document.querySelector('.severeImpact-container');
 
   const {
     name,
@@ -56,29 +58,33 @@ document.querySelector('form').addEventListener('submit', (e) => {
     totalHospitalBeds
   });
 
-  const tBody1 = document.querySelector('tBody');
-  const row1 = tBody1.insertRow();
+  if (totalHospitalBeds && population && reportedCases && timeToElapse && periodType) {
+    impactContainer.classList.add('display-content');
+    severeImpactContainer.classList.add('display-content');
+    const tBody1 = document.querySelector('tBody');
+    const row1 = tBody1.insertRow();
 
-  const resultvalues = Object.values(result.impact);
+    const resultvalues = Object.values(result.impact);
 
-  for (let i = 0; i < resultvalues.length; i += 1) {
-    const td = document.createElement('td');
-    const text = document.createTextNode(resultvalues[i]);
-    td.appendChild(text);
-    row1.appendChild(td);
-  }
-
-
-  const tBody2 = document.querySelector('#table2 tbody');
-  const row2 = tBody2.insertRow();
-
-  const severeImpact = Object.values(result.severeImpact);
+    for (let i = 0; i < resultvalues.length; i += 1) {
+      const td = document.createElement('td');
+      const text = document.createTextNode(resultvalues[i]);
+      td.appendChild(text);
+      row1.appendChild(td);
+    }
 
 
-  for (let i = 0; i < severeImpact.length; i += 1) {
-    const td = document.createElement('td');
-    const text = document.createTextNode(severeImpact[i]);
-    td.appendChild(text);
-    row2.appendChild(td);
+    const tBody2 = document.querySelector('#table2 tbody');
+    const row2 = tBody2.insertRow();
+
+    const severeImpact = Object.values(result.severeImpact);
+
+
+    for (let i = 0; i < severeImpact.length; i += 1) {
+      const td = document.createElement('td');
+      const text = document.createTextNode(severeImpact[i]);
+      td.appendChild(text);
+      row2.appendChild(td);
+    }
   }
 });

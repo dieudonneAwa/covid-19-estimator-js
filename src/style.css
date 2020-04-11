@@ -79,6 +79,7 @@ body {
 
 .impact-container, .severeImpact-container {
   margin: 20px;
+  display: none;
 }
 
 .impact-container h2, .severeImpact-container h2 {
@@ -139,4 +140,8 @@ body {
   .impact-container table td, .severeImpact-container table td {
     font-size: smaller;
   }
+}
+
+.display-content {
+  display: block;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +11,9 @@
 </head>
 
 <body>
-  
+
   <div class="main">
-    
+
     <h1>Covid19 Estimator</h1>
     <div class="form-container">
 
@@ -20,11 +21,11 @@
         <div class="form-group">
           <label for="regionName">
             Region name
-            <input
-              type="text"
-              name="regionName"
-              id="regionName"
-              data-name="Africa"
+            <input 
+              type="text" 
+              name="regionName" 
+              id="regionName" 
+              data-name="Africa" 
               placeholder="e.g. Africa"
             >
           </label>
@@ -33,13 +34,7 @@
         <div class="form-group">
           <label for="avgAge">
             Average age
-            <input
-              type="number"
-              name="avgAge"
-              id="avgAge"
-              data-avg-age="19.7"
-              placeholder="e.g. 19.7"
-            >
+            <input type="number" name="avgAge" id="avgAge" data-avg-age="19.7" step="any" placeholder="e.g. 19.7">
           </label>
         </div>
 
@@ -52,6 +47,7 @@
               id="avgDailyIncomeInUSD"
               data-avg-daily-income-in-Usd="5"
               placeholder="e.g. 5"
+              step="any"
             >
           </label>
         </div>
@@ -59,65 +55,39 @@
         <div class="form-group">
           <label for="avgDailyIncomePopulation">
             Average daily income population
-            <input
-              type="number"
-              name="avgDailyIncomePopulation"
-              id="avgDailyIncomePopulation"
-              step="any"
-              data-avg-daily-income-population="0.71"
-              placeholder="e.g. 0.71"
-            >
+            <input type="number" name="avgDailyIncomePopulation" id="avgDailyIncomePopulation" step="any"
+              data-avg-daily-income-population="0.71" placeholder="e.g. 0.71">
           </label>
         </div>
-        
+
         <div class="form-group population">
           <label for="population">
             Population
-            <input
-              type="number"
-              name="population"
-              id="population"
-              data-population="66622705"
-              placeholder="e.g. 66622705"
-            >
+            <input type="number" name="population" id="population" data-population="66622705"
+              placeholder="e.g. 66622705">
           </label>
         </div>
 
         <div class="form-group timeToElapse">
           <label for="timeToElapse">
             Time to elapse
-            <input
-              type="number"
-              name="timeToElapse"
-              id="timeToElapse"
-              data-time-to-elapse="58"
-              placeholder="e.g. 58"
-            >
+            <input type="number" name="timeToElapse" id="timeToElapse" data-time-to-elapse="58" placeholder="e.g. 58">
           </label>
         </div>
 
         <div class="form-group reportedCases">
           <label for="reportedCases">
             Reported cases
-            <input
-              type="number"
-              name="reportedCases"
-              id="reportedCases"
-              data-reported-cases="674"
-              placeholder="e.g. 674"
-            >
+            <input type="number" name="reportedCases" id="reportedCases" data-reported-cases="674"
+              placeholder="e.g. 674">
           </label>
         </div>
 
         <div class="form-group totalHospitalBeds">
           <label for="totalHospitalBeds">
             Total hospital beds
-            <input
-              type="number"
-              name="totalHospitalBeds" id="totalHospitalBeds"
-              data-total-hospital-beds="1380614"
-              placeholder="e.g. 1380614"
-            >
+            <input type="number" name="totalHospitalBeds" id="totalHospitalBeds" data-total-hospital-beds="1380614"
+              placeholder="e.g. 1380614">
           </label>
         </div>
 
@@ -132,7 +102,8 @@
           </label>
         </div>
 
-        <button class="estimate" type="submit" role="button" data-go-estimate="estimate" aria-label="submit">Estimate</button>
+        <button class="estimate" type="submit" role="button" data-go-estimate="estimate"
+          aria-label="submit">Estimate</button>
       </form>
 
     </div>
@@ -151,13 +122,13 @@
             <th>Cases of ICU by requested time</th>
             <th>Cases of ventilators by requested time</th>
           </tr>
-          
+
         </tbody>
       </table>
     </div>
 
     <div class="severeImpact-container">
-      <h2>Impact Estimations</h2>
+      <h2>Severe impact Estimations</h2>
       <table id="table2">
         <tbody>
 
@@ -176,9 +147,9 @@
     </div>
 
   </div>
-  
-  <script type="module" src="./estimator.js"></script>
+
   <script type="module" src="./index.js"></script>
 
 </body>
+
 </html>

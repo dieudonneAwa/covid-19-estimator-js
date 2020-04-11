@@ -8,6 +8,7 @@ export const covid19ImpactEstimator = (data) => {
   severeImpact.currentlyInfected = reportedCases * 50;
 
   switch (data.periodType) {
+    // Period type of Months
     case 'months':
       impact.infectionsByRequestedTime = impact.currentlyInfected * (
         2 ** Math.trunc(((data.timeToElapse * 30) / 3))
@@ -24,6 +25,7 @@ export const covid19ImpactEstimator = (data) => {
         .region.avgDailyIncomeInUSD / (data.timeToElapse * 30)));
       break;
 
+    // Period type of weeks
     case 'weeks':
       impact.infectionsByRequestedTime = impact.currentlyInfected * (
         2 ** (Math.trunc((data.timeToElapse * 7) / 3))
@@ -40,6 +42,7 @@ export const covid19ImpactEstimator = (data) => {
         .region.avgDailyIncomeInUSD / (data.timeToElapse * 7)));
       break;
 
+    // Period type of Days
     case 'days':
       impact.infectionsByRequestedTime = impact.currentlyInfected * (
         2 ** (Math.trunc((data.timeToElapse * 1) / 3))

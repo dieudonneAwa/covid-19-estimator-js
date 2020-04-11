@@ -48,7 +48,7 @@ body {
 .main .form-container .form-group input {
   border: 1px solid #f1f1f1;
   background-color: #1f364d;
-  padding: 2px;
+  padding: 2px 5px;
   height: 30px;
   width: 200px;
   border-radius: 5px;
@@ -112,4 +112,33 @@ body {
 .impact-container table td, .impact-container table th, .severeImpact-container table td, .severeImpact-container table th {
   border: 1px solid #ddd;
   padding: 5px;
+}
+
+@media (max-width: 768px) {
+  .main .form-container .form-group {
+    width: 100%;
+  }
+
+  .main .form-container .form-group input {
+    width: 100%;
+  }
+
+  .main .form-container .form-group select {
+    width: 100%;
+  }
+
+  .impact-container, .severeImpact-container {
+    margin: 5px;
+  }
+
+  .impact-container table th, .severeImpact-container table th {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    font-size: smaller;
+  }
+  .impact-container table td, .severeImpact-container table td {
+    font-size: smaller;
+  }
 }
